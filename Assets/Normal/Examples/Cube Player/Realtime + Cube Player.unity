@@ -379,7 +379,12 @@ PrefabInstance:
     - target: {fileID: 114226563030493824, guid: cec929e6874b9f34a8ff954244b7e748,
         type: 3}
       propertyPath: _appKey
-      value: b534d34e-bebf-4b23-996c-ec58275e4af3
+      value: bb025e86-eae7-44d8-9f50-3be6e98b5d9f
+      objectReference: {fileID: 0}
+    - target: {fileID: 114226563030493824, guid: cec929e6874b9f34a8ff954244b7e748,
+        type: 3}
+      propertyPath: _roomToJoinOnStart
+      value: TRoom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cec929e6874b9f34a8ff954244b7e748, type: 3}
