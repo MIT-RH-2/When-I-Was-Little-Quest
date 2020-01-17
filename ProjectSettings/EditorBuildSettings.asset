@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/integerSyncing.unity
+    path: Assets/_Scenes/integerSyncing.unity
     guid: 4653051daa25a0241b419dd77b0bb29b
   m_configObjects: {}
