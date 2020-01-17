@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/integerSyncing.unity
     guid: 4653051daa25a0241b419dd77b0bb29b
-  - enabled: 1
-    path: Assets/Normal/Examples/VR Player/Realtime + VR Player.unity
+  - enabled: 0
+    path: Assets/Normal/Examples/VR Player/Realtime + VR Player1.unity
     guid: cbad2cf12426734428dbbceae2c6cbdc
   - enabled: 0
     path: Assets/Normal/Brush/Brush.unity
     guid: 71411ad91a1a5c9428af58c817b04842
+  - enabled: 1
+    path: Assets/_Scenes/WorkingVolumetric.unity
+    guid: 5513bb1fe46a1441b92519dde9887aa1
   m_configObjects: {}
