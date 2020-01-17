@@ -44,7 +44,7 @@ public class BrushDrawFromHere : MonoBehaviour {
         _rt = this.gameObject.GetComponent<RealtimeTransform>();
         //_rv.RequestOwnership();
         //_realtime.clientID;
-        Swap();
+        //Swap();
     }
 
     public void VibrateControllers(float frequency, float amplitude, float time)
@@ -153,7 +153,7 @@ public class BrushDrawFromHere : MonoBehaviour {
             }
 
             //actions if moving stuff should be handled by GazeXR
-            if (action == 0)
+            if (action == 1)
             {
                 // return; maybe still do TRIGGER stuff here at least!
                 if (triggerPressed && !didOnceTrig)
@@ -174,7 +174,7 @@ public class BrushDrawFromHere : MonoBehaviour {
             }
             
             //actions if drawing
-            if (action == 1)
+            if (action == 0)
             {
                 // If we lose tracking, stop drawing
                 /*
