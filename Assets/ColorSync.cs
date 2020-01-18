@@ -56,6 +56,7 @@ public class ColorSync : RealtimeComponent {
         #if UNITY_LUMIN
             shouldObjectBeVisible = true;
         #endif
+        Debug.Log("Is model visible: " + shouldObjectBeVisible);
         _meshRenderer.enabled = shouldObjectBeVisible;
     }
 

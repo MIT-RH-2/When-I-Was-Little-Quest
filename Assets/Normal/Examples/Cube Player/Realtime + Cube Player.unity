@@ -431,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 114226563030493824, guid: cec929e6874b9f34a8ff954244b7e748,
         type: 3}
       propertyPath: _roomToJoinOnStart
-      value: Test Room1
+      value: Color Room1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cec929e6874b9f34a8ff954244b7e748, type: 3}
