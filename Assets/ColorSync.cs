@@ -47,4 +47,11 @@ public class ColorSync : RealtimeComponent {
         // This will fire the colorChanged event on the model, which will update the renderer for both the local player and all remote players.
         _model.color = color;
     }
+
+    public void SetIsVisible(bool isVisible) {
+        // Set the isVisible property on the model
+        // This will fire the isVisibleDidChange event on the model, which will update the renderer for both the local player and all remote players.
+        _model.isVisible = isVisible;
+    }
+
 }
