@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33199534086123454}
   - component: {fileID: 23323503900639040}
   - component: {fileID: 114757252374765478}
-  - component: {fileID: 9042621839421935604}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -93,30 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _brushStrokeWidth: 0.05
---- !u!114 &9042621839421935604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180682106015612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd9dd8476251e564bb8b43c56e1d62a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatarMats:
-  - {fileID: 2100000, guid: 845a8bc108ef0fc4d9ec7530a1efc53e, type: 2}
-  - {fileID: 2100000, guid: badce8da9f6539e49ab646a751d3533c, type: 2}
-  - {fileID: 2100000, guid: deb1d1687e7454c498ef14c70673af4b, type: 2}
-  - {fileID: 2100000, guid: 15c24517decf39b4d902d38045cdc4e4, type: 2}
-  - {fileID: 2100000, guid: 03c4ae4fe019cd8479273771df70444f, type: 2}
-  - {fileID: 2100000, guid: 5efde8c3ff4314d4eb728d8e1a695d18, type: 2}
-  - {fileID: 2100000, guid: 6e771ed2795f7014baa3a5f11e6a1083, type: 2}
-  - {fileID: 2100000, guid: c0a1d83696a427e49a36f8579796a2c3, type: 2}
-  - {fileID: 2100000, guid: 5550a5db912573e469b0fd895d9a2a21, type: 2}
-  - {fileID: 2100000, guid: 43b6d0e8b26c79641aca02a5501771be, type: 2}
-  matSlot: 0
 --- !u!1 &1196413553089462
 GameObject:
   m_ObjectHideFlags: 0
