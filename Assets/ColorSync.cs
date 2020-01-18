@@ -17,6 +17,7 @@ public class ColorSync : RealtimeComponent {
             if (_model != null) {
                 // Unregister from events
                 _model.colorDidChange -= ColorDidChange;
+                _model.isVisibleDidChange -= IsVisibleDidChange;
             }
 
             // Store the model
@@ -25,9 +26,11 @@ public class ColorSync : RealtimeComponent {
             if (_model != null) {
                 // Update the mesh render to match the new model
                 UpdateMeshRendererColor();
+                UpdateMeshRendererVisibility();
 
                 // Register for events so we'll know if the color changes later
                 _model.colorDidChange += ColorDidChange;
+                _model.isVisibleDidChange += IsVisibleDidChange;
             }
         }
     }
@@ -37,9 +40,23 @@ public class ColorSync : RealtimeComponent {
         UpdateMeshRendererColor();
     }
 
+    private void IsVisibleDidChange(ColorSyncModel model, bool value) {
+        // Update the mesh renderer
+        UpdateMeshRendererVisibility();
+    }
+
+
     private void UpdateMeshRendererColor() {
         // Get the color from the model and set it on the mesh renderer.
         _meshRenderer.material.color = _model.color;
+    }
+
+    private void UpdateMeshRendererVisibility() {
+        bool shouldObjectBeVisible = _model.isVisible;
+        #if UNITY_LUMIN
+            shouldObjectBeVisible = true;
+        #endif
+        _meshRenderer.enabled = shouldObjectBeVisible;
     }
 
     public void SetColor(Color color) {

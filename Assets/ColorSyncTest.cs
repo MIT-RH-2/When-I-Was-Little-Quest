@@ -5,7 +5,9 @@ using UnityEngine;
 public class ColorSyncTest : MonoBehaviour {
     [SerializeField]
     private Color _color;
+    private bool _visible;
     private Color _previousColor;
+    private bool _previousVisible;
 
     private ColorSync _colorSync;
 
@@ -19,6 +21,10 @@ public class ColorSyncTest : MonoBehaviour {
         if (_color != _previousColor) {
             _colorSync.SetColor(_color);
             _previousColor = _color;
+        }
+        if (_visible != _previousVisible){
+            _colorSync.SetIsVisible(_visible);
+            _previousVisible = _visible;
         }
     }
 }
