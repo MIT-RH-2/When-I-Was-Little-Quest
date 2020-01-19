@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneChanger : MonoBehaviour
 {
 
-    public int state;
+    public AudioClip[] exitSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -21,43 +21,90 @@ public class SceneChanger : MonoBehaviour
 
     public void FlyAway(Transform SceneParent)
     {
-        /*foreach (Transform child in SceneParent)
+        /*
+        BrushStroke[] bs = GameObject.FindObjectsOfType<BrushStroke>();
+
+    
+        if (bs.Length > 0)
         {
-            int rand = Random.Range(0, 3);
-            switch (rand)
+            foreach (BrushStroke b in bs)
             {
-                case 0:
-                    iTween.MoveBy(transform.GetChild(state).gameObject, iTween.Hash("x", -2f, "time", .8f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
-                    print("Up");
-                    break;
-                case 1:
-                    print("Down");
-                    iTween.MoveBy(transform.GetChild(state).gameObject, iTween.Hash("x", 2f, "time", .8f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
-                    break;
-                case 2:
-                    print("Left");
-                    iTween.MoveBy(transform.GetChild(state).gameObject, iTween.Hash("z", -2f, "time", .8f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
-                    break;
-                case 3:
-                    print("Right");
-                    iTween.MoveBy(transform.GetChild(state).gameObject, iTween.Hash("x", 2f, "time", .8f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
-                    break;
-                default:
-                    print("default!");
-                    break; 
-            } */
-        iTween.MoveBy(SceneParent.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
-    }
+                b.gameObject.AddComponent<AudioSource>();
+                b.gameObject.GetComponent<AudioSource>().spatialBlend = 1f;
+                int rand = Random.Range(0, 4);
+                int rand2 = Random.Range(0, exitSounds.Length);
+                b.GetComponent<AudioSource>().PlayOneShot(exitSounds[rand2]);
+                switch (rand)
+                {
+                    case 0:
+                        iTween.MoveBy(b.gameObject, iTween.Hash("x", -150f, "time", 2.5f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", "delay", .1f, gameObject));
+                        print("Up");
+                        break;
+                    case 1:
+                        print("Down");
+                        iTween.MoveBy(b.gameObject, iTween.Hash("x", -100f, "time", 2f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+                        break;
+                    case 2:
+                        print("Left");
+                        iTween.MoveBy(b.gameObject, iTween.Hash("z", -100f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", "delay", .15f, gameObject));
+                        break;
+                    case 3:
+                        print("Right");
+                        iTween.MoveBy(b.gameObject, iTween.Hash("z", -150f, "time", 2.5f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+                        break;
+                    case 4:
+                        print("what");
+                        iTween.MoveBy(b.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+                        break;
+                    default:
+                        print("default!");
+                        iTween.MoveBy(b.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+                        break;
+                }
+                //iTween.MoveBy(SceneParent.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+            }
+        }
+       */
 
-    public void FlyLeft()
-    {
-        iTween.MoveBy(transform.GetChild(state).gameObject, iTween.Hash("x", -2f, "time", .8f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
-    }
-
-    public void FlyRight()
-    {
-        //iTween.MoveBy(transform.GetChild(state).gameObject, new Vector3(10f, 0f, 0f), .8f);
-        iTween.MoveBy(transform.GetChild(state).gameObject, iTween.Hash("x", 2f, "time", .8f, "easeType", iTween.EaseType.linear, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+        if (SceneParent.childCount > 0) iTween.MoveBy(SceneParent.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject)); 
+        /*
+        {
+            foreach (Transform child in SceneParent)
+            {
+                child.gameObject.AddComponent<AudioSource>();
+                child.gameObject.GetComponent<AudioSource>().spatialBlend = 1f;
+                int rand = Random.Range(0, 4);
+                int rand2 = Random.Range(0, exitSounds.Length);
+                child.GetComponent<AudioSource>().PlayOneShot(exitSounds[rand2]);
+                switch (rand)
+                {
+                    case 0:
+                        iTween.MoveBy(child.gameObject, iTween.Hash("x", -150f, "time", 2.5f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", "delay", .1f, gameObject));
+                        print("Up");
+                        break;
+                    case 1:
+                        print("Down");
+                        iTween.MoveBy(child.gameObject, iTween.Hash("x", -100f, "time", 2f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+                        break;
+                    case 2:
+                        print("Left");
+                        iTween.MoveBy(child.gameObject, iTween.Hash("z", -100f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", "delay", .15f, gameObject));
+                        break;
+                    case 3:
+                        print("Right");
+                        iTween.MoveBy(child.gameObject, iTween.Hash("z", -150f, "time", 2.5f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+                        break;
+                    case 4:
+                        print("what");
+                        iTween.MoveBy(child.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+                        break;
+                    default:
+                        print("default!");
+                        iTween.MoveBy(child.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+                        break;
+                }
+            }
+        } */
     }
 
     public void RelocateTurnOffNextScene()
