@@ -17,7 +17,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/WorkingVolumetric.unity
     guid: 5513bb1fe46a1441b92519dde9887aa1
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/SchoolBus.unity
     guid: 1e93d7036b9944e9eba53a8042bf51e9
+  - enabled: 0
+    path: Assets/_Scenes/PlayGround.unity
+    guid: 5091328b339ba48cdb04ef56c199ccd5
+  - enabled: 1
+    path: Assets/_Scenes/Sequence Scene.unity
+    guid: 9874cf0d2a8e64493be4d5e4c28efdc8
   m_configObjects: {}
