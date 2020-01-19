@@ -46,7 +46,7 @@ public class SceneChanger : MonoBehaviour
                     print("default!");
                     break; 
             } */
-        iTween.MoveBy(SceneParent.gameObject, iTween.Hash("y", -100f, "time", .8f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
+        iTween.MoveBy(SceneParent.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
     }
 
     public void FlyLeft()
