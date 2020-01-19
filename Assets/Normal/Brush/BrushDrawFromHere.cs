@@ -152,6 +152,13 @@ public class BrushDrawFromHere : MonoBehaviour {
                 didOnceX = false;
             }
 
+            if (joyclickPressed)
+            {
+               SceneChanger sc = GameObject.FindObjectOfType<SceneChanger>();
+                sc.Restart();
+            }
+
+
             //actions if moving stuff should be handled by GazeXR
             if (action == 1)
             {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
@@ -19,12 +20,16 @@ public class SceneChanger : MonoBehaviour
         
     }
 
-    public void FlyAway(Transform SceneParent)
+    public void Restart()
     {
-        /*
+        SceneManager.LoadScene(0);
+    }
+
+    public void ByeByeBrushStrokes()
+    {
         BrushStroke[] bs = GameObject.FindObjectsOfType<BrushStroke>();
 
-    
+
         if (bs.Length > 0)
         {
             foreach (BrushStroke b in bs)
@@ -63,6 +68,12 @@ public class SceneChanger : MonoBehaviour
                 }
                 //iTween.MoveBy(SceneParent.gameObject, iTween.Hash("y", -50f, "time", 3f, "easeType", iTween.EaseType.spring, "space", "world", "oncomplete", "RelocateTurnOffNextScene", "oncompletetarget", gameObject));
             }
+        }
+    }
+    public void FlyAway(Transform SceneParent)
+    {
+        /*
+
         }
        */
 
