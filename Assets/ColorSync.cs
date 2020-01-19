@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Normal.Realtime;
+using UnityEngine.XR.MagicLeap;
 
 public class ColorSync : RealtimeComponent {
     [SerializeField]
@@ -42,6 +44,11 @@ public class ColorSync : RealtimeComponent {
 
     private void IsVisibleDidChange(ColorSyncModel model, bool value) {
         // Update the mesh renderer
+        #if !UNITY_LUMIN
+            if(_model.isVisible){
+                GetComponent<RealtimeTransform>().RequestOwnership();
+            }
+        #endif
         UpdateMeshRendererVisibility();
     }
 
@@ -71,5 +78,15 @@ public class ColorSync : RealtimeComponent {
         // This will fire the isVisibleDidChange event on the model, which will update the renderer for both the local player and all remote players.
         _model.isVisible = isVisible;
     }
+
+    public void TransferObject(){
+        _model.isVisible = true;
+    }
+
+    public void DragAndDrop(){
+
+    }
+
+
 
 }
